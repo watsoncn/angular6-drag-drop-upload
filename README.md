@@ -2,7 +2,6 @@
 
 An Angular 6 module for simple desktop file and folder drag and drop.
 
-
 ## Installation
 
 ```bash
@@ -10,7 +9,6 @@ npm install angular6-drag-drop-upload --save
 ```
 
 ## Usage
-
 
 ### Importing The 'ngx-file-drop' Module
 
@@ -21,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FileDropModule } from 'ngx-file-drop';
+import { FileDropModule } from 'angular6-drag-drop-upload';
 
 
 @NgModule({
@@ -38,15 +36,13 @@ import { FileDropModule } from 'ngx-file-drop';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 ```
 
 ### Enabling File Drag
 
-
 ```TypeScript
 import { Component } from '@angular/core';
-import { UploadEvent, UploadFile } from 'ngx-file-drop';
+import { UploadEvent, UploadFile } from 'angular6-drag-drop-upload';
 
 @Component({
   selector: 'demo-root',
@@ -102,12 +98,11 @@ export class AppComponent {
     console.log(event);
   }
 }
-
-
 ```
+
 ```HTML
 <div class="center">
-    <file-drop headertext="Drop files here" (onFileDrop)="dropped($event)" 
+    <file-drop headertext="Drop files here" (onFileDrop)="dropped($event)"
     (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
         <span>optional content (don't set headertext then)</span>
     </file-drop>
@@ -130,11 +125,11 @@ export class AppComponent {
 
 ## Parameters
 
-Name  | Description | Example | 
-------------- | ------------- | -------------
-(onFileDrop)  | On drop function called after the files are read | (onFileDrop)="dropped($event)"
-(onFileOver)  | On drop over function| (onFileOver)="fileOver($event)"
-(onFileLeave)  | On drop leave function| (onFileOver)="fileLeave($event)"
-headertext  | Text to be displayed inside the drop box | headertext="Drop files here"
-customstyle  | Custom style class name to be used | customstyle="my-style"
-[disableIf]  | Conditionally disable the dropzone  | [disableIf]="condition"
+| Name          | Description                                      | Example                          |
+| ------------- | ------------------------------------------------ | -------------------------------- |
+| (onFileDrop)  | On drop function called after the files are read | (onFileDrop)="dropped($event)"   |
+| (onFileOver)  | On drop over function                            | (onFileOver)="fileOver($event)"  |
+| (onFileLeave) | On drop leave function                           | (onFileOver)="fileLeave($event)" |
+| headertext    | Text to be displayed inside the drop box         | headertext="Drop files here"     |
+| customstyle   | Custom style class name to be used               | customstyle="my-style"           |
+| [disableIf]   | Conditionally disable the dropzone               | [disableIf]="condition"          |
